@@ -1,0 +1,12 @@
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\bin\Debug\net6.0\Educative.Core.deps.json
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\bin\Debug\net6.0\Educative.Core.dll
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\bin\Debug\net6.0\Educative.Core.pdb
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.csproj.AssemblyReference.cache
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.AssemblyInfoInputs.cache
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.AssemblyInfo.cs
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.csproj.CoreCompileInputs.cache
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.dll
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\refint\Educative.Core.dll
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\Educative.Core.pdb
+C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\obj\Debug\net6.0\ref\Educative.Core.dll
