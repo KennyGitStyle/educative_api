@@ -1,14 +1,14 @@
-namespace Educative.Core.Entity
+namespace Educative.Core.Entity;
+
+public class StudentCourse
 {
-    public class StudentCourse
-    {
-        public string StudentId { get; set; } = string.Empty!;
+    public string StudentId { get; set; } = string.Empty!;
 
-        public Student Student { get; set; } = new Student();
+    public Student Student { get; set; } = new Student();
 
 
-        public string CourseId { get; set; }  = string.Empty!;
+    public string CourseId { get; set; } = string.Empty!;
 
-        public Course Course { get; set; } = new Course();
-    }
+    public Course Course { get; set; } = new Course();
 }
+

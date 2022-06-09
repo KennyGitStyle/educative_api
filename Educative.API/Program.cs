@@ -1,5 +1,4 @@
-using Educative.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
+using Educative.API.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddCors();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDbContext<EducativeContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("EducativeDefaultConnection")));
+builder.Services.AddDbContextExtension(builder.Configuration);
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
