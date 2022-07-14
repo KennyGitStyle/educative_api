@@ -9,6 +9,7 @@ namespace Educative.Infrastructure.Context
         public EducativeContext(DbContextOptions options) :
             base(options)
         {
+            
         }
 
         public DbSet<Student> Students { get; set; } = null!;
@@ -21,27 +22,29 @@ namespace Educative.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder
-                .Entity<StudentCourse>()
-                .HasKey(sc => new { sc.StudentId, sc.CourseId });
+            
+
 
             modelBuilder
-                .Entity<StudentCourse>()
-                .HasOne(sc => sc.Student)
-                .WithMany(s => s.StudentCourses)
-                .HasForeignKey(sc => sc.StudentId);
+            .Entity<StudentCourse>()
+            .HasKey(sc => new { sc.StudentId, sc.CourseId });
 
-            modelBuilder
-                .Entity<StudentCourse>()
-                .HasOne<Course>(sc => sc.Course)
-                .WithMany(c => c.StudentCourses)
-                .HasForeignKey(sc => sc.CourseId);
+            modelBuilder.Entity<StudentCourse>()
+            .HasOne<Student>(sc => sc.Student)
+            .WithMany(s => s.StudentCourses)
+            .HasForeignKey(sc => sc.StudentId);
 
-            modelBuilder
-                .Entity<Student>()
-                .HasOne<Address>(s => s.Address)
-                .WithOne(a => a.Student)
-                .HasForeignKey<Address>(a => a.StudentId);
+            modelBuilder.Entity<StudentCourse>()
+            .HasOne<Course>(sc => sc.Course)
+            .WithMany(s => s.StudentCourses)
+            .HasForeignKey(sc => sc.CourseId);
+
+            modelBuilder.Entity<Student>()
+            .HasOne(a => a.Address)
+            .WithOne(s => s.Student);
+
+            
+            
         }
     }
 }

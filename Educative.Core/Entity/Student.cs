@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Educative.Core.Entity;
 
 namespace Educative.Core;
@@ -17,12 +19,13 @@ public class Student
     [Display(Name = "Lastname")]
     public string Lastname { get; set; } = string.Empty!;
     public DateTime? DateOfBirth { get; set; }
-    public virtual Address Address { get; set; } = new Address();   
+    public virtual Address Address { get; set; } = null!;
     [DataType(DataType.PhoneNumber)]
     public string PhoneNo { get; set; } = string.Empty!;
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; } = string.Empty!;
     [MaxLength(100)]
-    public int? Attendance { get; set; }
-    public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
+    public int Attendance { get; set; }
+    public virtual ICollection<StudentCourse> StudentCourses { get; set; }
+
 }

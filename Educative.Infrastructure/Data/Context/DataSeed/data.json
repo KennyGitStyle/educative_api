@@ -1,0 +1,33 @@
+[{
+    "studentId": "Drus",
+    "student": {
+        "studentId": "string",
+        "firstname": "string",
+        "middlenameInitial": "string",
+        "lastname": "string",
+        "dateOfBirth": "2022-06-20T18:30:56.100Z",
+        "phoneNo": "string",
+        "email": "user@example.com",
+        "attendance": 0,
+        "studentCourses": [{
+
+                "StudentId": "Drus",
+                "CourseId": "Bus"
+            }
+
+        ]
+    },
+    "courseId": "Bus",
+    "Course": {
+        "CourseId": "Bus",
+        "CourseName": "Business",
+        "CourseTutor": "Maye Teddman",
+        "CourseDescription": "Lorem ipsum dolor sit amet. Eos vero minima sit dolor ipsum qui dolorum sunt sed accusamus fugiat hic odio saepe non blanditiis veritatis. Cum itaque reprehenderit qui velit blanditiis est vero architecto in veniam voluptatem cum repellat voluptas eos corporis perferendis. Ab sunt harum ut illum veritatis aut nulla provident vel odit saepe.",
+        "CourseTopic": "Arts",
+
+        "StudentCourses": [{
+            "CourseId": "Bus",
+            "StudentId": "Drus"
+        }]
+    }
+}]

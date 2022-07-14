@@ -5,7 +5,8 @@ namespace Educative.Core
 {
     public class Address
     {
-        [ForeignKey("Student")]
+        
+
         public string AddressId { get; set; } = string.Empty;
 
         [Required]
@@ -18,16 +19,17 @@ namespace Educative.Core
 
         [Required]
         [Display(Name = "City")]
-        public string? City { get; set; }
+        public string City { get; set; }
 
         [Display(Name = "County")]
-        public string County { get; set; } = string.Empty;
+        public string County { get; set; } = string.Empty!;
 
         [Required]
         [DataType(DataType.PostalCode)]
-        public string Postcode { get; set; } = string.Empty;
-         public string StudentId { get; set; } = string.Empty!;
-        public Student Student { get; set; } = new Student();
+        public string Postcode { get; set; } = string.Empty!;
+        [ForeignKey("Student")]
+        public string StudentAddressId { get; set; }
+        public virtual Student Student { get; set; }
 
     }
 }
