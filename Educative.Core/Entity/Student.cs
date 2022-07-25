@@ -19,12 +19,12 @@ public class Student
     [Display(Name = "Lastname")]
     public string Lastname { get; set; } = string.Empty!;
     public DateTime? DateOfBirth { get; set; }
-    public virtual Address Address { get; set; } = null!;
+    public virtual Address Address { get; set; }
     [DataType(DataType.PhoneNumber)]
     public string PhoneNo { get; set; } = string.Empty!;
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; } = string.Empty!;
-    [MaxLength(100)]
+    //[MaxLength(100)]
     public int Attendance { get; set; }
     public virtual ICollection<StudentCourse> StudentCourses { get; set; }
 

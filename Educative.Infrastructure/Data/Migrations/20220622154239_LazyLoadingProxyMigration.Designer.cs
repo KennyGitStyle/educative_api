@@ -3,6 +3,7 @@ using System;
 using Educative.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Educative.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(EducativeContext))]
-    partial class EducativeContextModelSnapshot : ModelSnapshot
+    [Migration("20220622154239_LazyLoadingProxyMigration")]
+    partial class LazyLoadingProxyMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
@@ -35,6 +37,7 @@ namespace Educative.Infrastructure.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("County")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Postcode")
@@ -42,6 +45,7 @@ namespace Educative.Infrastructure.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("StudentAddressId")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("AddressId");
@@ -59,6 +63,7 @@ namespace Educative.Infrastructure.Data.Migrations
 
                     b.Property<string>("CourseDescription")
                         .IsRequired()
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CourseName")
@@ -73,9 +78,6 @@ namespace Educative.Infrastructure.Data.Migrations
                     b.Property<string>("CourseTutor")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("REAL");
 
                     b.HasKey("CourseId");
 
@@ -102,7 +104,7 @@ namespace Educative.Infrastructure.Data.Migrations
                     b.Property<string>("StudentId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Attendance")
+                    b.Property<int?>("Attendance")
                         .HasMaxLength(100)
                         .HasColumnType("INTEGER");
 
@@ -110,6 +112,7 @@ namespace Educative.Infrastructure.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Firstname")
@@ -117,12 +120,14 @@ namespace Educative.Infrastructure.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Lastname")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<char?>("MiddlenameInitial")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNo")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("StudentId");
@@ -134,7 +139,9 @@ namespace Educative.Infrastructure.Data.Migrations
                 {
                     b.HasOne("Educative.Core.Student", "Student")
                         .WithOne("Address")
-                        .HasForeignKey("Educative.Core.Address", "StudentAddressId");
+                        .HasForeignKey("Educative.Core.Address", "StudentAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Student");
                 });
@@ -165,7 +172,8 @@ namespace Educative.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Educative.Core.Student", b =>
                 {
-                    b.Navigation("Address");
+                    b.Navigation("Address")
+                        .IsRequired();
 
                     b.Navigation("StudentCourses");
                 });

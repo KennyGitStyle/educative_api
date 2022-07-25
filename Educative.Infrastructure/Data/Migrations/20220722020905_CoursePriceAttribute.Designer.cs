@@ -3,6 +3,7 @@ using System;
 using Educative.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Educative.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(EducativeContext))]
-    partial class EducativeContextModelSnapshot : ModelSnapshot
+    [Migration("20220722020905_CoursePriceAttribute")]
+    partial class CoursePriceAttribute
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
@@ -59,6 +61,7 @@ namespace Educative.Infrastructure.Data.Migrations
 
                     b.Property<string>("CourseDescription")
                         .IsRequired()
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CourseName")
@@ -74,8 +77,8 @@ namespace Educative.Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("REAL");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("CourseId");
 

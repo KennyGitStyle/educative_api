@@ -1,3 +1,4 @@
+using System.Linq;
 using Educative.Core;
 using Educative.Core.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +43,19 @@ namespace Educative.Infrastructure.Context
             modelBuilder.Entity<Student>()
             .HasOne(a => a.Address)
             .WithOne(s => s.Student);
+
+            if(Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+            {
+                foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+                {
+                    var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(decimal));
+
+                    foreach (var property in properties)
+                    {
+                        modelBuilder.Entity(entityType.Name).Property(property.Name).HasConversion<double>();
+                    }
+                }
+            }
 
             
             
