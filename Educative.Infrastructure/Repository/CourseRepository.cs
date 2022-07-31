@@ -2,9 +2,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Educative.Core;
 using Educative.Infrastructure.Context;
-using Educative.Infrastructure.Helpers;
 using Educative.Infrastructure.Interface;
-using Educative.Infrastructure.QueryExtension;
+using Microsoft.EntityFrameworkCore;
 
 namespace Educative.Infrastructure.Repository
 {
@@ -17,19 +16,17 @@ namespace Educative.Infrastructure.Repository
             _context = context;
         }
 
-        public async Task<PagedList<Course>> GetAllCourses(CourseParams courseParams)
+        public async Task<Course> GetCourseAsyncExplicit()
         {
-            var query = _context.Courses
-                .SortCourse(courseParams.OrderBy)
-                .SearchCourses(courseParams.SearchTerm)
-                .FilterCourse(courseParams.Name, courseParams.Topic)
-                .AsQueryable();
+            var course = await _context.Courses.Where(c => c.CourseId == "Bus").SingleAsync();
 
-            var courses = await PagedList<Course>.ToPagedList(query, courseParams.PageNumber, courseParams.PageSize);
+            await _context.Entry(course).Reference(c => c.CourseTutor).LoadAsync();
 
+            return course;
 
-            return courses;
         }
+
+        
 
        
     }
