@@ -6,9 +6,8 @@ namespace Educative.Infrastructure.Interface
 {
     public interface ICourseRepository : IGenericRepository<Course> 
     {
-        Task<PagedList<Course>> GetAllCourses(CourseParams courseParams);
 
-        
+        Task<PagedList<Course>> GetAllCourses(CourseParams courseParams);
 
     }
 }
