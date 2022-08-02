@@ -36,7 +36,7 @@ namespace Educative.API.Controllers
         [ProducesResponseType(404)]
         public async Task<ActionResult<Course>> V1GetCourseById(string id)
         {
-            var course = await _unitOfWork.CourseRepository.GetCourseAsyncExplicit();
+            var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
             if(course == null){
                 return NotFound(new HttpErrorException(404));
             }
