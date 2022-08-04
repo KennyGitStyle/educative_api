@@ -30,6 +30,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(configurePolicy: options =>
 {
   options.WithMethods("GET", "POST", "PUT", "DELETE");
+    options.AllowAnyOrigin();
     options.WithOrigins(); // client url
 });
 

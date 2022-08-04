@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o4ZR9PQCo9U32CpUFUOPc6byv2/avoP+o+PcC+dENsmlfet5GNbrP4GQxBIXcPNeVvKPGn6xeWPTz+hdCurhgg==",
+  "dgSpecHash": "zMEAhtbZMCikzVm3bRh20oayh/pnB4fPoofj81jcI66iYGgRO3s3/llw/Ndw4daZsXX+yo2kS2Zw7hBHNGgkoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kenneth\\Desktop\\dotnet_educative\\Educative.Core\\Educative.Core.csproj",
+  "projectFilePath": "/workspaces/dotnet_educative/Educative.Core/Educative.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Kenneth\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512"
+    "/home/vscode/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.5/microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512"
   ],
   "logs": []
 }

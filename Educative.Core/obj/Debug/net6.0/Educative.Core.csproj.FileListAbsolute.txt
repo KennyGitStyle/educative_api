@@ -1,3 +1,15 @@
+/workspaces/dotnet_educative/Educative.Core/bin/Debug/net6.0/Educative.Core.deps.json
+/workspaces/dotnet_educative/Educative.Core/bin/Debug/net6.0/Educative.Core.dll
+/workspaces/dotnet_educative/Educative.Core/bin/Debug/net6.0/Educative.Core.pdb
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.csproj.AssemblyReference.cache
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.AssemblyInfoInputs.cache
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.AssemblyInfo.cs
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.csproj.CoreCompileInputs.cache
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.dll
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/refint/Educative.Core.dll
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/Educative.Core.pdb
+/workspaces/dotnet_educative/Educative.Core/obj/Debug/net6.0/ref/Educative.Core.dll
 C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\bin\Debug\net6.0\Educative.Core.deps.json
 C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\bin\Debug\net6.0\Educative.Core.dll
 C:\Users\Kenneth\Desktop\dotnet_educative\Educative.Core\bin\Debug\net6.0\Educative.Core.pdb
